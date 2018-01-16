@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1514284521 source:c:\users\user\desktop\c++\heap\src\cls.cpp
+	"cls.h"
+
+1514284521 c:\users\user\desktop\c++\heap\include\cls.h
+
+1514487222 source:c:\users\user\desktop\c++\heap\main.cpp
+	<iostream>
+
