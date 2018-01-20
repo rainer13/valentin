@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1516455427 source:c:\users\user\desktop\c++\mergesort\main.cpp
+	<iostream>
+	<stdlib.h>
+	<string.h>
+

@@ -1,7 +1,7 @@
 
 public class Persoana1 extends Persoana {
 	
-	Persoana p1, p2, p3, p4;
+	
 	
 	
 	public  Persoana1(){
@@ -11,9 +11,38 @@ public class Persoana1 extends Persoana {
 	@Override
 	public void run() {
 		
+		Mesaj m = new Mesaj("hello");
+		m.reciver.add(p2);
+		try {
+		this.wait(10000);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
 		
 	}
+		Server.registerTopicPersona(this, Topic.anunturi);
+		
+		try {
+			this.wait(10000);
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			
+		}
+		
+		Mesaj m2 = new Mesaj("aaa");
+		m2.topics.add(Topic.bucatarie);
+		Server.recieve(m2);
+		try {
+			this.wait();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		}
 
+	}
 	
 	
 }
