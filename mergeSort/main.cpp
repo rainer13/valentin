@@ -1,7 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include<string.h>
+#include <time.h>
 using namespace std;
+
 
 int* merge(int* v1, int*v2, int m, int n){
 
@@ -69,7 +71,7 @@ void mergeSort(int *v, int n){
 void mergeSort1(int *v, int n){
 
 
-    int m=(n-1)/2;
+    int m=n/2;
     if(n==1)return;
     mergeSort1(v,m);
     mergeSort1(v+m,n-m);
@@ -79,12 +81,38 @@ void mergeSort1(int *v, int n){
 
 }
 
+void citire(int n, int v[]){
+    int x;
+     for(int i=1;i<=n;i++){
+       x=1+rand()%100;
+       v[i]=x;
+    }
 
+}
 
 int main()
 {
 
-    int a[5], b[3], *c,i;
+    int a[100], b[1000], *c,i;
+    clock_t begin = clock();
+    mergeSort(a,100);
+    clock_t end = clock();
+    double time_spent = (double)(end - begin)/ CLOCKS_PER_SEC;
+    cout<<time_spent;
+
+    cout<<"\n";
+
+    clock_t begin1 = clock();
+    mergeSort(b,1000);
+    clock_t end1 = clock();
+    double time_spent2 = (double)(end1 - begin1)/ CLOCKS_PER_SEC;
+    cout<<time_spent2;
+
+
+
+
+
+    /*
     a[1]=7;
     a[2]=4;
     a[3]=9;
@@ -115,8 +143,8 @@ cout<<"\n";
     mergeSort1(a,5);
     for(int i=0;i<5;i++)
         cout<<a[i]<<" ";
-        cout<<"\n\n";
-
+        cout<<"\n\n";*/
 
     return 0;
 }
+
