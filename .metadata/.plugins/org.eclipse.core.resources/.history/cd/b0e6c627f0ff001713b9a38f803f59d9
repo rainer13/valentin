@@ -1,0 +1,9 @@
+package testThreadSleep;
+
+public class Main {
+	
+	Thread t11=new Thread(new t1());
+	Thread t22=new Thread(new t2());
+	t2 t22=new t2;
+
+}

@@ -1,0 +1,9 @@
+package testThreadSleep;
+
+public class Main {
+	
+	t1 t1Obj= new t1();
+	t2 t2Obj= new t2();
+	t2.t=t1;
+
+}
