@@ -8,8 +8,11 @@ public class Persoana2 extends Persoana {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-
+		Mesaj m = new Mesaj("bbb");
+		m.reciver.add(p5);
+		Server.recieve(m);
+		
+	
 	}
 
 }
