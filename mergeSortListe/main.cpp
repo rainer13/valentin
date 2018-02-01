@@ -49,11 +49,13 @@ void insertPoz(int cnp,int pozitie, Elev **head){
 
 
 
-void merge(Elev *head1, Elev *head2){
+Elev* merge(Elev *head1, Elev *head2){
 
     Elev *e= new Elev();
+    Elev *head=e;
     while(head1!= NULL && head2!=NULL ){
-
+        Elev *e2=new Elev();
+        e->next=e2;
         e->cnp=min(head1->cnp, head2->cnp);
         e=e->next;
 
@@ -76,29 +78,31 @@ void merge(Elev *head1, Elev *head2){
 
 
     while(head1!=NULL){
+        Elev *e2=new Elev();
+        e->next=e2;
 
-        e=e->next;
         e->cnp=head1->cnp;
         head1=head1->next;
-
+        if(head1!=NULL){
+            e=e->next;
+        }
+        else
+            e->next=NULL;
 
     }
 
 
-     while(head2!=NULL){
+     if(head2!=NULL){
 
-        e=e->next;
+
         e->cnp=head2->cnp;
         head2=head2->next;
+        e->next=head2;
 
     }
+    return head;
 
-    while(e!=NULL){
 
-        cout<<e->cnp<<" ";
-        e=e->next;
-
-    }
 }
 
 
