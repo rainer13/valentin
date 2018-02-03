@@ -12,11 +12,9 @@ public class Persoana3 extends Persoana {
 		Mesaj m3 = new Mesaj("ccc");
 		m3.reciver.add(p2);
 		m3.reciver.add(p5);
-		m3.topics.add(Topic.anunturi);
 		this.sendMessage(m3);
 		this.registerTopic(Topic.bucatarie);
 		this.registerTopic(Topic.sport);
-		Server.registerTopicPersona(this, Topic.politica);
 		this.sendMessage(m3);
 		try {
 			this.wait(10000);
@@ -26,7 +24,6 @@ public class Persoana3 extends Persoana {
 			
 		}
 		
-		Server.requestedMessage(3, this);
 		
 
 	}

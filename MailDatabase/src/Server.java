@@ -11,13 +11,15 @@ public  class Server {
 	
 	public static synchronized void recieve (Mesaj m) {
 		
-		if(m.reciver!=null) {
+		if(m.reciver.size()!=0) {
 			++ countMessages;
 			mesagerie.add(m);
 			if(countMessages>maxMessages) {
 				
-				for(Persoana p : m.reciver)
+				for(Persoana p : m.reciver) {
+					p.notify();
 					p.reciveMessage(m);
+				}
 				--countMessages;
 				
 			}
@@ -29,9 +31,10 @@ public  class Server {
 			HashSet<Persoana> persoane = new HashSet<Persoana>();
 			for(Topic t: m.topics)
 				persoane.addAll(persoanaTopic.get(t));
-			for(Persoana p : persoane)
+			for(Persoana p : persoane) {
+				p.notify();
 				p.informTopic(m.id);
-			
+				}
 			
 		}
 		

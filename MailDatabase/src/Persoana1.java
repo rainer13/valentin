@@ -22,15 +22,12 @@ public class Persoana1 extends Persoana {
 		catch(Exception e) {
 			e.printStackTrace();
 		
-	}
-		Server.registerTopicPersona(this, Topic.anunturi);
-		
+		}
 		try {
 			this.wait(10000);
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
 		}
 		
 		Mesaj m2 = new Mesaj("aaa");

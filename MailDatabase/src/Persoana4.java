@@ -13,9 +13,7 @@ public class Persoana4 extends Persoana {
 		m4.reciver.add(p3);
 		m4.reciver.add(p5);
 		this.registerTopic(Topic.sport);
-		Server.requestedMessage(2, this);
 		this.registerTopic(Topic.bucatarie);
-		Server.requestedMessage(3, this);
 		try {
 			this.wait(10000);
 			}

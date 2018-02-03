@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,6 +7,7 @@ public abstract class Persoana implements Runnable {
 	public Persoana p1,p2,p3,p4,p5;
 	int id;
 	static Integer count=0;
+	ArrayList<Mesaj> mesagerie = new ArrayList<Mesaj>();
 	public Persoana() {
 		
 		synchronized (count) {
@@ -15,7 +17,7 @@ public abstract class Persoana implements Runnable {
 		
 	}
 	
-	public void sendMessage(Mesaj m) {
+	protected void sendMessage(Mesaj m) {
 		
 		Server.recieve(m);
 		
@@ -24,7 +26,11 @@ public abstract class Persoana implements Runnable {
 	
 	public synchronized void reciveMessage(Mesaj m) {
 		
-		System.out.println(m.continut);
+		
+			System.out.println(m.continut);
+			mesagerie.add(m);
+			
+		
 		
 		
 	}
