@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class myMathTest  {
 
-	@Test(expected=exception.class)
+	@Test(expected = exception.class)
 	void test() {
 		myMath m = new myMath();
 		m.decompose(0);
